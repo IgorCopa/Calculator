@@ -1,0 +1,138 @@
+@charset "utf-8";
+$firstColor: rgb(0, 0, 0);
+$secondColor: rgb(5, 66, 25);
+$thirdColor: rgb(190, 190, 190);
+$fourthColor: rgb(170, 170, 170);
+
+body, *{
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+}
+
+body{
+    background-color: $firstColor;
+}
+
+ .wrapper{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 95%;
+
+    .header{
+        margin: 1em 0;
+
+        .title{
+            text-align: center;
+            text-transform: uppercase;
+            color: $fourthColor;
+            font-weight: 600;
+        }
+    }
+    .container{
+        display: flex;
+        flex-direction: column;
+        align-items: space-between;
+        position: relative;
+        background-color: $secondColor;
+        margin: .5em 0;
+        border-radius: 5px;
+
+        .screen{
+            margin: .5em auto;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+
+            .input-screen{
+                background-color: $thirdColor;
+                border: 1px solid $firstColor;
+                border-radius: 5px;
+                outline: none;
+                height: 3em;
+                width: 98%;
+                font-size: 1.5em;
+            }
+        }
+
+        .keys{
+            display: flex;
+            justify-content: space-between;
+
+            .numbers{
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+            }
+
+            .operators{
+                display: flex;
+                justify-content: space-between;
+                margin-left: .5em;
+
+                .column{
+                    display: flex;
+                    flex-direction: column;
+                }
+            }
+
+            .btn{
+                width: 3em;
+                outline: none;
+                background-color: $fourthColor;
+                border: 1px solid $firstColor;
+                border-radius: 5px;
+                margin: .1em;
+                padding: .4em;
+                text-align: center;
+                font-size: .8em;
+            }
+
+            .btn:hover{
+                background-color: $thirdColor;
+            }
+        }
+    }
+}
+
+@media (min-width: 400px){
+    .wrapper{
+
+        .keys{
+            .btn{
+                width: 3.6em !important;
+                margin: .3em !important;
+                padding: .5em !important;
+                font-size: 1em !important;
+            }
+        }
+    }
+}
+
+@media (min-width: 500px){
+    .wrapper{
+        top: 50%;
+
+        .keys{
+            .btn{
+                width: 5em !important;
+            }
+        }
+    }
+}
+
+@media (min-width: 600px){
+    .wrapper{
+        width: 600px;
+
+        .keys{
+            .btn{
+                width: 6em !important;
+            }
+        }
+    }
+}
